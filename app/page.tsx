@@ -1,3 +1,5 @@
+import NavBar from "../components/widgets/NavBar";
+
 export default function Home() {
-  return <main></main>;
+  return <main><NavBar />Home</main>;
 }
