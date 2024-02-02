@@ -1,5 +1,11 @@
-import NavBar from "../components/widgets/NavBar";
+import NavBar from "../components/NavBar";
 
 export default function Home() {
-  return <main><NavBar />Home</main>;
+  return (
+    <main>
+      <NavBar />
+      <div className="flex justify-center items-center h-screen">Home</div>
+      
+    </main>
+  );
 }

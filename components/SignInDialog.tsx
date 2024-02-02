@@ -8,12 +8,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import SignInGoogleBtn from "./SignInGoogleBtn";
 
 export function SigninDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant={"default"}>Sign Up / Log in</Button>
+        <Button
+          variant={"default"}
+          className="text-xs md:text-sm dark:lg:font-bold lg:font-normal dark:font-bold"
+        >
+          Sign Up / Log in
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -21,11 +27,8 @@ export function SigninDialog() {
           <DialogDescription>Sign up or log in with Google</DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
-          <Button variant="secondary">Continue with Google</Button>
+          <SignInGoogleBtn />
         </div>
-        {/* <DialogFooter>
-          <Button type="submit">Save changes</Button>
-        </DialogFooter> */}
       </DialogContent>
     </Dialog>
   );
