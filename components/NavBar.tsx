@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 
-import { ShoppingBag, ShoppingCart } from "lucide-react";
+import { Store, ShoppingCart } from "lucide-react";
 import {
   Sheet,
   SheetClose,
@@ -41,7 +41,7 @@ const NavBar = () => {
   return (
     <div className="pt-10 pb-9 lg:px-24 px-8 text-2xl shadow-md flex lg:justify-around justify-between">
       <div className="flex justify-center items-center  gap-3">
-        <ShoppingBag className="h-10 w-10" />
+        <Store className="h-10 w-10" />
 
         <h1 className="border-l hidden md:block ">ሱቅ</h1>
       </div>
@@ -53,7 +53,7 @@ const NavBar = () => {
           <Link href={"/shop"}>Shop</Link>
         </li>
       </ul>
-      <div className={`flex lg:gap-5 ${!user ? "gap-2" : "gap-5"}`}>
+      <div className={`flex lg:gap-5 ${!user ? "gap-2" : "gap-3"}`}>
         {user
           ? !loading && (
               <>
@@ -66,25 +66,27 @@ const NavBar = () => {
                   <SheetContent className="overflow-y-auto pb-12">
                     <SheetHeader>
                       <SheetTitle className="text-4xl">Cart</SheetTitle>
-                      <SheetDescription className="mt-3">
+                      <SheetDescription className="my-3">
                         Here you can remove items from your cart or continue to
                         Checkout.
                       </SheetDescription>
                     </SheetHeader>
-                    <div className="flex flex-col justify-center items-center gap-3 py-10">
+                    <SheetFooter>
+                      <SheetClose asChild>
+                        <Button
+                          type="submit"
+                          className="w-full text-white mt-5"
+                        >
+                          Checkout
+                        </Button>
+                      </SheetClose>
+                    </SheetFooter>
+                    <div className="flex flex-col justify-center items-center gap-5 py-10">
                       <CartProduct />
                       <CartProduct />
                       <CartProduct />
                       <CartProduct />
                     </div>
-
-                    <SheetFooter>
-                      <SheetClose asChild>
-                        <Button type="submit" className="w-full text-white">
-                          Checkout
-                        </Button>
-                      </SheetClose>
-                    </SheetFooter>
                   </SheetContent>
                 </Sheet>
 

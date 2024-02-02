@@ -11,7 +11,7 @@ const ProductCard = ({ id }: { id: string }) => {
         <Image alt="Product Image" src={computer} className="h-40" />
         <div className=" h-full w-full flex justify-evenly flex-col text-start">
           <div className="h-16 w-full flex justify-start items-center py-1 px-3">
-            <h1 className="text-lg  ">Appel Mack book Computer laptop</h1>
+            <h1 className="text-lg line-clamp-2 ">Appel Mack book Computer laptop</h1>
           </div>
 
           <span className="h-[1px] w-full bg-primary"></span>
