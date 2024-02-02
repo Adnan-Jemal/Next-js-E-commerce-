@@ -21,7 +21,7 @@ const CartProduct = () => {
       />
       <div className=" h-full w-full flex justify-evenly flex-col text-start">
         <div className="h-16 w-full flex justify-start items-center py-1 px-3">
-          <h1 className="md:text-lg  ">Appel Mack book Computer laptop</h1>
+          <h1 >Appel Mack book Computer laptop</h1>
         </div>
 
         <span className="h-[1px] w-full bg-primary"></span>
