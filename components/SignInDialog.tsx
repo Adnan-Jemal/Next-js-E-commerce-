@@ -16,7 +16,8 @@ export function SigninDialog() {
       <DialogTrigger asChild>
         <Button
           variant={"default"}
-          className="text-xs md:text-sm dark:lg:font-bold lg:font-normal dark:font-bold"
+          
+          className="text-xs md:text-sm  text-white"
         >
           Sign Up / Log in
         </Button>

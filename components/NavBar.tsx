@@ -17,13 +17,15 @@ import {
 import { ShoppingBag, ShoppingCart } from "lucide-react";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import ProductCard from "./productCard";
+import CartProduct from "./CartProduct";
 
 const NavBar = () => {
   const [user, loading] = useAuthState(auth);
@@ -61,16 +63,28 @@ const NavBar = () => {
                       <ShoppingCart className="h-[1.2rem] w-[1.2rem]" />
                     </Button>
                   </SheetTrigger>
-                  <SheetContent>
+                  <SheetContent className="overflow-y-auto pb-12">
                     <SheetHeader>
-                      <SheetTitle>Your Cart</SheetTitle>
-                      <SheetDescription>
-                        This action cannot be undone. This will permanently
-                        delete your account and remove your data from our
-                        servers.
+                      <SheetTitle className="text-4xl">Cart</SheetTitle>
+                      <SheetDescription className="mt-3">
+                        Here you can remove items from your cart or continue to
+                        Checkout.
                       </SheetDescription>
                     </SheetHeader>
-                    <ProductCard/>
+                    <div className="flex flex-col justify-center items-center gap-3 py-10">
+                      <CartProduct />
+                      <CartProduct />
+                      <CartProduct />
+                      <CartProduct />
+                    </div>
+
+                    <SheetFooter>
+                      <SheetClose asChild>
+                        <Button type="submit" className="w-full text-white">
+                          Checkout
+                        </Button>
+                      </SheetClose>
+                    </SheetFooter>
                   </SheetContent>
                 </Sheet>
 
