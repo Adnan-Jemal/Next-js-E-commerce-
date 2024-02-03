@@ -25,15 +25,15 @@ const NavRightMenu = () => {
       console.error(error);
     }
   };
+
   return (
     <div className={`flex lg:gap-5 ${!user ? "gap-2" : "gap-3"}`}>
+      
       {user
         ? !loading && (
             <>
               <CartBtn />
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Avatar
+              <Avatar
                     className="cursor-pointer justify-center items-center flex
                   "
                   >
@@ -42,6 +42,9 @@ const NavRightMenu = () => {
                       {user.displayName?.charAt(0)} 
                     </AvatarFallback>
                   </Avatar>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+             
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="center" className="mt-4">
                   <DropdownMenuItem>
