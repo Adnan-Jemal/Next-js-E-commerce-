@@ -1,10 +1,11 @@
-import NavBar from "@/components/NavBar";
+
+
 import ProductCard from "@/components/productCard";
 
 const page = () => {
   return (
     <div>
-      <NavBar />
+      
 
       <div className="flex justify-center items-center   max-w-6xl  flex-col m-auto my-20 text-center ">
         <h1 className="text-3xl mb-10  ">Products</h1>
@@ -16,6 +17,7 @@ const page = () => {
           <ProductCard id={'5'} />
         </div>
       </div>
+   
     </div>
   );
 };

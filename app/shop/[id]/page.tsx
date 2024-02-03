@@ -1,14 +1,13 @@
-import NavBar from "@/components/NavBar";
 import Image from "next/image";
 import React from "react";
 import computer from "@/public/computer.jpeg";
 import AddToCartBtn from "@/components/AddtoCartBtn";
+import ProductCard from "@/components/productCard";
 
 const page = ({ params }: { params: { id: string } }) => {
   return (
     <>
-      <NavBar />
-      <div className="max-w-6xl m-auto my-20">
+      <div className="max-w-6xl m-auto my-20 flex gap-20 flex-col">
         <div className="flex flex-col lg:flex-row justify-center items-center mx-6 gap-10">
           <Image
             alt="product Image"
@@ -37,6 +36,18 @@ const page = ({ params }: { params: { id: string } }) => {
               empowers you to tackle any task with effortless grace.
             </p>
             <AddToCartBtn />
+          </div>
+        </div>
+        <div>
+          <h1 className="text-4xl mb-9 ml-3">Similar Products</h1>
+          <div className="flex">
+            <div className="flex lg:justify-start justify-center flex-wrap gap-10 ">
+              <ProductCard id={"1"} />
+              <ProductCard id={"2"} />
+              <ProductCard id={"3"} />
+              <ProductCard id={"4"} />
+              <ProductCard id={"5"} />
+            </div>
           </div>
         </div>
       </div>
