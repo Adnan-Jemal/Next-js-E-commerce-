@@ -12,11 +12,11 @@ const OrderSum = () => {
       <Separator className="my-3 " />
       <div className="w-full px-4 flex flex-col gap-2">
         <div className="flex justify-between items-center">
-          <p className="text-muted-foreground text-xl">Subtotal</p>
+          <p className="text-muted-foreground text-lg">Subtotal</p>
           <p className="font-bold text-xl">2000 ብር</p>
         </div>
         <div className="flex justify-between items-center">
-          <p className="text-muted-foreground text-xl">VAT</p>
+          <p className="text-muted-foreground text-lg">VAT</p>
           <p className="font-bold text-xl">300 ብር</p>
         </div>
         <Separator className="my-3 " />
