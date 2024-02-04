@@ -4,9 +4,11 @@ import computer from "@/public/computer.jpeg";
 import AddToCartBtn from "@/components/buttons/AddtoCartBtn";
 import ProductCard from "@/components/cards/productCard";
 
+
 const page = ({ params }: { params: { id: string } }) => {
   return (
     <>
+    
       <div className="max-w-6xl m-auto my-20 flex gap-20 flex-col">
         <div className="flex flex-col lg:flex-row justify-center items-center mx-6 gap-10">
           <Image

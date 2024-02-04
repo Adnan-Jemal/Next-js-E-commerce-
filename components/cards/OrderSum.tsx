@@ -1,17 +1,14 @@
 import React from "react";
 
-import CheckoupProduct from "./CheckoupProduct";
+import CheckoutProduct from "./CheckoutProduct";
 import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 
 const OrderSum = () => {
   return (
     <div className=" shadow-lg dark:border-primary-foreground border-gray-50 dark:border-4 border-2 rounded-lg min-h-[60px] flex flex-col items-center justify-center lg:mx-8 mx-3 lg:p-8 p-3 gap-3 ">
-      <CheckoupProduct />
-      <CheckoupProduct />
-      <CheckoupProduct />
-
-      <CheckoupProduct />
+      <CheckoutProduct />
+      <CheckoutProduct />
       <Separator className="my-3 " />
       <div className="w-full px-4 flex flex-col gap-2">
         <div className="flex justify-between items-center">

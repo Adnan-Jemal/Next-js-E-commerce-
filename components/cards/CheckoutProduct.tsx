@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import computer from "@/public/computer.jpeg";
 
-const CheckoupProduct = () => {
+const CheckoutProduct = () => {
   return (
     <div className=" h-20  flex justify-between items-center gap-3">
       <Image
@@ -16,4 +16,4 @@ const CheckoupProduct = () => {
   );
 };
 
-export default CheckoupProduct;
+export default CheckoutProduct;
