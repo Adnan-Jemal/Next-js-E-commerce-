@@ -13,6 +13,7 @@ import {
 import { Button } from "./ui/button";
 import CartProduct from "./CartProduct";
 import { ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 const CartBtn = () => {
   return (
@@ -31,9 +32,11 @@ const CartBtn = () => {
         </SheetHeader>
         <SheetFooter>
           <SheetClose asChild>
-            <Button type="submit" className="w-full text-white mt-5">
-              Checkout
-            </Button>
+            <Link href={"/checkout"} className="w-full">
+              <Button type="submit" className="w-full text-white mt-5">
+                Checkout
+              </Button>
+            </Link>
           </SheetClose>
         </SheetFooter>
         <div className="flex flex-col justify-center items-center gap-5 py-10">
