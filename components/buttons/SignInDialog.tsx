@@ -14,11 +14,7 @@ export function SigninDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          variant={"default"}
-          
-          className="text-xs md:text-sm  text-white"
-        >
+        <Button variant={"default"} className="text-xs md:text-sm  text-white">
           Sign Up / Log in
         </Button>
       </DialogTrigger>

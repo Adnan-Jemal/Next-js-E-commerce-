@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import computer from "@/public/computer.jpeg";
-import AddToCartBtn from "@/components/AddtoCartBtn";
-import ProductCard from "@/components/productCard";
+import AddToCartBtn from "@/components/buttons/AddtoCartBtn";
+import ProductCard from "@/components/cards/productCard";
 
 const page = ({ params }: { params: { id: string } }) => {
   return (

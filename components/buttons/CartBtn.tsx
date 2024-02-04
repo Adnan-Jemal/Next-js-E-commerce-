@@ -10,8 +10,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { Button } from "./ui/button";
-import CartProduct from "./CartProduct";
+import { Button } from "../ui/button";
+import CartProduct from "../cards/CartProduct";
 import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 

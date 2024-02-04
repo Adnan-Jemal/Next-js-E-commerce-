@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { Button } from "./ui/button";
-import { auth } from "../firebase";
+import { Button } from "../ui/button";
+import { auth } from "../../firebase";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 
 const SignInGoogleBtn = () => {
@@ -17,7 +17,7 @@ const SignInGoogleBtn = () => {
 
   return (
     <Button onClick={SignIn} variant="secondary">
-      {!loading?'Continue with Google':'Loading...'}
+      {!loading ? "Continue with Google" : "Loading..."}
     </Button>
   );
 };

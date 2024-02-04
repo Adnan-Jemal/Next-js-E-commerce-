@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import computer from "../public/computer.jpeg";
+import computer from "@/public/computer.jpeg";
 import { Coins } from "lucide-react";
 import Link from "next/link";
 

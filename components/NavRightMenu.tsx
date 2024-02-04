@@ -9,8 +9,8 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { ModeToggle } from "./ui/modeToggle";
-import { SigninDialog } from "./SignInDialog";
-import CartBtn from "./CartBtn";
+import { SigninDialog } from "./buttons/SignInDialog";
+import CartBtn from "./buttons/CartBtn";
 import { auth } from "../firebase";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 
@@ -35,7 +35,6 @@ const NavRightMenu = () => {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  
                   <Avatar
                     className="cursor-pointer justify-center items-center flex
                   "
