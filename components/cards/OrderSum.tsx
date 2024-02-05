@@ -3,10 +3,11 @@ import React from "react";
 import CheckoutProduct from "./CheckoutProduct";
 import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
+import { toast } from "sonner";
 
 const OrderSum = () => {
   return (
-    <div className=" shadow-lg dark:border-primary-foreground border-gray-50 dark:border-4 border-2 rounded-lg min-h-[60px] flex flex-col items-center justify-center lg:mx-8 mx-3 lg:p-8 p-3 gap-3 ">
+    <div className=" shadow-lg dark:border-primary-foreground border-gray-50 dark:border-4 border-2 rounded-lg min-h-[60px] flex flex-col items-center justify-center lg:mx-8  lg:p-8 p-3 gap-3 ">
       <CheckoutProduct />
       <CheckoutProduct />
       <Separator className="my-3 " />
@@ -24,7 +25,12 @@ const OrderSum = () => {
           <p className="text-2xl ">Total</p>
           <p className="font-bold  text-3xl">2300 ብር</p>
         </div>
-        <Button className="my-4 text-lg pb-1" size={"lg"}>
+        <Button
+          type="submit"
+          form="CheckoutForm"
+          className="my-4 text-lg pb-1"
+          size={"lg"}
+        >
           Place Order
         </Button>
       </div>

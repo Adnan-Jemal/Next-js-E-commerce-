@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ArrowDown } from "lucide-react";
 import React from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import Link from "next/link";
 
 const MobileMenu = () => {

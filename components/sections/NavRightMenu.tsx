@@ -1,17 +1,17 @@
 "use client";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
-import { ModeToggle } from "./ui/modeToggle";
-import { SigninDialog } from "./buttons/SignInDialog";
-import CartBtn from "./buttons/CartBtn";
-import { auth } from "../firebase";
+import { ModeToggle } from "../ui/modeToggle";
+import { SigninDialog } from "../buttons/SignInDialog";
+import CartBtn from "../buttons/CartBtn";
+import { auth } from "../../firebase";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 
 const NavRightMenu = () => {
@@ -40,7 +40,7 @@ const NavRightMenu = () => {
                   "
                   >
                     {user.photoURL && <AvatarImage src={user.photoURL} />}
-                    <AvatarFallback className="pb-1">
+                    <AvatarFallback className="">
                       {user.displayName?.charAt(0)}
                     </AvatarFallback>
                   </Avatar>

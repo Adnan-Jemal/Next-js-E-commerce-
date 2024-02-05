@@ -5,7 +5,8 @@ import React from "react";
 const page = () => {
   return (
     <div className="max-w-6xl   m-auto">
-      <div className=" h-full flex flex-col justify-center items-center md:flex-row gap-2 my-10">
+      <h1 className="pt-16 text-4xl px-6 self-center">Checkout</h1>
+      <div className=" h-full flex flex-col justify-center items-center md:flex-row gap-4 py-10 px-5">
         <BillingForm />
         <OrderSum />
       </div>
