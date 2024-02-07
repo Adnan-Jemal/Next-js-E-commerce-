@@ -12,9 +12,10 @@ import {
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/firebase";
 
 const formSchema = z.object({
   firstName: z.string(),
@@ -22,18 +23,25 @@ const formSchema = z.object({
   country: z.string(),
   region: z.string(),
   subCityOrZone: z.string(),
-  phoneNumber: z.string().min(9, {
-    message: "Please Enter a valid Phone number",
-  }).optional(),
+  phoneNumber: z
+    .string()
+    .min(9, {
+      message: "Please Enter a valid Phone number",
+    })
+    .optional(),
   email: z.string().email(),
 });
 
 const BillingForm = () => {
+  const [user, loading] = useAuthState(auth);
+
+  let userNames = user?.displayName?.split(" ");
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: "",
-      fatherName: "",
+      firstName: userNames?.[0],
+      fatherName: userNames?.[1],
       country: "Ethiopia",
       region: "",
       subCityOrZone: "",
@@ -44,12 +52,11 @@ const BillingForm = () => {
 
   const route = useRouter();
 
-
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    toast("Order Placed Successfully",{
-      description:"you've successfully placed an order!"
-    })
-    route.push('/checkout/1')
+    toast("Order Placed Successfully", {
+      description: "you've successfully placed an order!",
+    });
+    route.push("/checkout/1");
     console.log(data);
   };
 
@@ -85,7 +92,7 @@ const BillingForm = () => {
                   <FormItem>
                     <FormLabel>Father's Name</FormLabel>
                     <FormControl>
-                      <Input required {...field} placeholder="Father's Name" />
+                      <Input {...field} placeholder="Father's Name" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -120,7 +127,7 @@ const BillingForm = () => {
                 <FormItem>
                   <FormLabel>Region</FormLabel>
                   <FormControl>
-                    <Input required {...field} placeholder="Enter Region..." />
+                    <Input {...field} placeholder="Enter Region..." />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -136,7 +143,6 @@ const BillingForm = () => {
                   <FormLabel>Subcity/Zone/Woreda</FormLabel>
                   <FormControl>
                     <Input
-                      required
                       {...field}
                       placeholder="Enter Subcity/Zone/Woreda..."
                     />
