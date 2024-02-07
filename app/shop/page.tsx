@@ -2,7 +2,7 @@
 import ProductCard from "@/components/cards/productCard";
 import ProductList from "@/components/sections/ProductList";
 
-const page = () => {
+const Shop = () => {
   return (
     <div>
       <div className="flex justify-center items-center h-full   max-w-6xl  flex-col m-auto my-20 text-center ">
@@ -15,4 +15,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Shop;

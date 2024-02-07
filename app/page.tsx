@@ -1,4 +1,4 @@
-import Category from "@/components/cards/Category";
+import Categories from "@/components/cards/Categories";
 import HomeHero from "@/components/sections/HomeHero";
 
 
@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       <HomeHero/>
-      <Category />
+      <Categories/>
     </main>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import React from "react";
 import AddToCartBtn from "@/components/buttons/AddtoCartBtn";
 import { doc } from "firebase/firestore";
 import { db } from "@/firebase";
@@ -8,9 +7,12 @@ import { useDocument } from "react-firebase-hooks/firestore";
 import ProductList from "@/components/sections/ProductList";
 import Loading from "./loading";
 
-const page = ({ params }: { params: { id: string } }) => {
-  const productDoc = doc(db, "Products", params.id);
 
+const page = ({ params }: { params: { id: string } }) => {
+
+  
+
+  const productDoc = doc(db, "Products", params.id);
   const [value, loading, error] = useDocument(productDoc);
   error&&console.error(error)
 
@@ -21,7 +23,7 @@ const page = ({ params }: { params: { id: string } }) => {
           <Image
             alt="product Image"
             src={value?.data()?.Image}
-            className="rounded-2xl shadow-md"
+            className="rounded-2xl shadow-md h-96  "
             height={500}
             width={500}
           />
@@ -37,14 +39,14 @@ const page = ({ params }: { params: { id: string } }) => {
               </span>
             </h1>
             <p className="text-sm lg:text-lg">{value?.data()?.Description}.</p>
-            <AddToCartBtn />
+            <AddToCartBtn id={params.id} img={value?.data()?.Image} name={value?.data()?.Name} price={value?.data()?.Price} />
           </div>
         </div>
         <div>
           <h1 className="text-4xl mb-9 ml-3">Similar Products</h1>
           <div className="flex">
             <div className="flex lg:justify-start justify-center flex-wrap gap-10 ">
-              <ProductList />
+              <ProductList   />
             </div>
           </div>
         </div>

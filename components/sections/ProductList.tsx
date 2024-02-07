@@ -10,7 +10,7 @@ const ProductList = () => {
   const q = query(collection(db, "Products"));
   const [value, loading, error] = useCollection(q);
   return (
-    <div> 
+    <> 
         
       {loading?<Loading/>:value?.docs.map((doc) => (
         <ProductCard
@@ -21,7 +21,7 @@ const ProductList = () => {
           key={doc.id}
         />
       ))}
-    </div>
+    </>
   );
 };
 
