@@ -7,12 +7,12 @@ import { CartContext } from "@/context/cartContext";
 import { useRouter } from "next/navigation";
 
 const OrderSum = () => {
-  const router = useRouter()
+  const router = useRouter();
   const { cartItems } = useContext(CartContext);
 
-  cartItems.length===0 && router.push('/shop')
+  cartItems.length === 0 && router.push("/shop");
   const subTotal = cartItems.reduce(
-    (accumulator, currentItem) => accumulator + currentItem.price,
+    (sum, currentItem) => sum + Number(currentItem.price) ,
     0
   );
   const Vat = subTotal * 0.15;
@@ -43,9 +43,9 @@ const OrderSum = () => {
           <p className="font-bold text-xl">{Vat} ብር</p>
         </div>
         <Separator className="my-3 " />
-        <div className="flex justify-between items-center my-4 px-4">
+        <div className="flex justify-center items-center gap-2">
           <p className="text-2xl ">Total</p>
-          <p className="font-bold  text-3xl">{Total} ብር</p>
+          <p className="font-bold  text-2xl">{Total} ብር</p>
         </div>
         <Button
           type="submit"

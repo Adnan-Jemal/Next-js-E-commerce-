@@ -14,7 +14,7 @@ const HomeHero = () => {
           />
           <div className="flex justify-around flex-col items-center top-0 right-0 bottom-0 left-0 m-auto absolute z-10 gap-5 lg:gap-8 bg-secondary/50 md:h-fit md:w-[90%] w-[80%] h-[80%] p-10 rounded-3xl ">
             <h1 className="text-3xl md:text-5xl   text-center px-2 text-white font-semibold font-sans   ">
-              Get The Latest And The Best Products From ሱቅ።
+              Get The Latest And The Best Tech Products From ሱቅ።
             </h1>
             <Link href="./shop">
               <Button variant={"outline"} size={"lg"} className="md:text-xl text-lg">
