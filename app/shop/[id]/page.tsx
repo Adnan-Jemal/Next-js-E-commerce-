@@ -38,7 +38,7 @@ const page = ({ params }: { params: { id: string } }) => {
                 {value?.data()?.DiscountedPrice} ብር
               </span>
             </h1>
-            <p className="text-sm lg:text-lg">{value?.data()?.Description}.</p>
+            <p className="text-sm lg:text-lg">{value?.data()?.Description}</p>
             <AddToCartBtn id={params.id} img={value?.data()?.Image} name={value?.data()?.Name} price={value?.data()?.Price} />
           </div>
         </div>
@@ -46,7 +46,7 @@ const page = ({ params }: { params: { id: string } }) => {
           <h1 className="text-4xl mb-9 ml-3">Similar Products</h1>
           <div className="flex">
             <div className="flex lg:justify-start justify-center flex-wrap gap-10 ">
-              <ProductList   />
+              <ProductList excludeId={value?.id}  />
             </div>
           </div>
         </div>

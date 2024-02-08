@@ -5,14 +5,18 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import ProductCard from "../cards/productCard";
 import Loading from "@/app/shop/loading";
 
-
-const ProductList = () => {
+type propType={
+  excludeId?:string,
+}
+const ProductList = ({excludeId}:propType) => {
   const q = query(collection(db, "Products"));
   const [value, loading, error] = useCollection(q);
+  const similarProducts= value?.docs.filter((item)=>excludeId!==item.id)
+
   return (
     <> 
         
-      {loading?<Loading/>:value?.docs.map((doc) => (
+      {loading?<Loading/>:similarProducts?.map((doc) => (
         <ProductCard
           id={doc.id}
           img={doc.data().Image}

@@ -14,7 +14,7 @@ type propType = {
 const ProductCard = ({ id, name, price, img }: propType) => {
   return (
     <Link href={`/shop/${id}`}>
-      <div className="bg-secondary/10 dark:bg-secondary/50 h-72 w-64 rounded-lg flex items-center flex-col shadow-md hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors cursor-pointer overflow-hidden group">
+      <div className="bg-secondary/10 dark:bg-secondary/50 h-72 w-64 rounded-lg grid items-center grid-rows-2 shadow-md hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors cursor-pointer overflow-hidden group">
         <Image
           alt="Product Image"
           src={img}

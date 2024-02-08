@@ -4,7 +4,6 @@ import { Coins, XIcon } from "lucide-react";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
 
-
 type propTypes = {
   id: string;
   name: string;
@@ -14,21 +13,21 @@ type propTypes = {
 };
 const CartProduct = ({ id, name, img, price, RemoveCartItem }: propTypes) => {
   return (
-    
-      <div className="relative bg-secondary h-32 w-full rounded-2xl flex items-center shadow-md hover:bg-primary/10 transition-colors group overflow: visible">
-        <Button
-          variant="destructive"
-          size="icon"
-          className="absolute top-[-6px]   right-[-5px] h-6 w-6 rounded-full shadow-md lg:hidden lg:group-hover:flex transition-all "
-          onClick={() => {
-            RemoveCartItem(id);
-            toast("Product Removed From Your Cart.", {
-              description: "Click on add to cart to add it back to your cart.",
-            });
-          }}
-        >
-          <XIcon className="h-[1.2rem] w-[1.2rem]" />
-        </Button>
+    <div className="relative bg-secondary h-32 w-full rounded-2xl flex items-center shadow-md hover:bg-primary/10 transition-colors group overflow: visible">
+      <Button
+        variant="destructive"
+        size="icon"
+        className="absolute top-[-6px]   right-[-5px] h-6 w-6 rounded-full shadow-md lg:hidden lg:group-hover:flex transition-all "
+        onClick={() => {
+          RemoveCartItem(id);
+          toast("Product Removed From Your Cart.", {
+            description: "Click on add to cart to add it back to your cart.",
+          });
+        }}
+      >
+        <XIcon className="h-[1.2rem] w-[1.2rem]" />
+      </Button>
+      <div className="grid grid-cols-2 w-full h-full">
         <Image
           width={100}
           height={100}
@@ -50,7 +49,7 @@ const CartProduct = ({ id, name, img, price, RemoveCartItem }: propTypes) => {
           </div>
         </div>
       </div>
-  
+    </div>
   );
 };
 

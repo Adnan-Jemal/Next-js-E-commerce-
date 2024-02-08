@@ -43,8 +43,8 @@ const OrderSum = () => {
           <p className="font-bold text-xl">{Vat} ብር</p>
         </div>
         <Separator className="my-3 " />
-        <div className="flex justify-center items-center gap-2">
-          <p className="text-2xl ">Total</p>
+        <div className="flex justify-center items-center gap-3">
+          <p className="text-2xl ">Total:</p>
           <p className="font-bold  text-2xl">{Total} ብር</p>
         </div>
         <Button
