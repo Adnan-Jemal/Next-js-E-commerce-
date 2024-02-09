@@ -9,15 +9,17 @@ type cartItemsType = {
   img: string;
 };
 type cartContexType = {
-  cartItems: cartItemsType[],
-  AddCartItem: (item: cartItemsType) => void,
-  RemoveCartItem: (itemId: string) => void,
-}
+  cartItems: cartItemsType[];
+  AddCartItem: (item: cartItemsType) => void;
+  RemoveCartItem: (itemId: string) => void;
+  ClearCartItems: () => void;
+};
 
 export const CartContext = createContext<cartContexType>({
   cartItems: [],
   AddCartItem: () => {},
   RemoveCartItem: () => {},
+  ClearCartItems: () => {},
 });
 
 import React from "react";
@@ -44,14 +46,24 @@ const CartWrapper = ({ children }: { children: React.ReactNode }) => {
   const AddCartItem = (item: cartItemsType) => {
     setCartItems([...cartItems, item]);
   };
-
+  const ClearCartItems = () => {
+    setCartItems([]);
+    localStorage.removeItem(CART_STORAGE_KEY);
+    console.log('removed')
+    
+  };
   const RemoveCartItem = (itmeId: string) => {
     setCartItems(cartItems.filter((item) => item.id != itmeId));
   };
 
   return (
     <CartContext.Provider
-      value={{ cartItems: cartItems, RemoveCartItem, AddCartItem }}
+      value={{
+        cartItems: cartItems,
+        RemoveCartItem,
+        AddCartItem,
+        ClearCartItems,
+      }}
     >
       {children}
     </CartContext.Provider>

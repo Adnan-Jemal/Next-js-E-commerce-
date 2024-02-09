@@ -46,7 +46,7 @@ const page = ({ params }: { params: { id: string } }) => {
           <h1 className="text-4xl mb-9 ml-3">Similar Products</h1>
           <div className="flex">
             <div className="flex lg:justify-start justify-center flex-wrap gap-10 ">
-              <ProductList excludeId={value?.id}  />
+              <ProductList excludeId={value?.id} showOnlyFour={true}  />
             </div>
           </div>
         </div>

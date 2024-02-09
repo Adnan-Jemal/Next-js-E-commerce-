@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,7 +15,9 @@ import { Input } from "../ui/input";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/firebase";
+import { auth, db } from "@/firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { CartContext } from "@/context/cartContext";
 
 const formSchema = z.object({
   firstName: z.string(),
@@ -50,14 +52,26 @@ const BillingForm = () => {
     },
   });
 
+  const { cartItems, ClearCartItems } = useContext(CartContext);
+
   const route = useRouter();
 
-  const handleSubmit = (data: z.infer<typeof formSchema>) => {
+  const handleSubmit = async (data: z.infer<typeof formSchema>) => {
     toast("Order Placed Successfully", {
       description: "you've successfully placed an order!",
     });
-    route.push("/checkout/1");
-    console.log(data);
+
+    const newOrder = await addDoc(collection(db, "Orders"), {
+      ...form.getValues(),
+      Date: serverTimestamp(),
+      Products: cartItems,
+    });
+    route.push(`/checkout/${newOrder.id}`);
+    setTimeout(() => {
+      ClearCartItems();
+    }, 1000);
+
+    
   };
 
   return (

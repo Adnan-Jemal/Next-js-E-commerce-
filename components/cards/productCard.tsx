@@ -20,7 +20,7 @@ const ProductCard = ({ id, name, price, img }: propType) => {
           src={img}
           width={500}
           height={500}
-          className="h-40 group-hover:scale-105  transition-all"
+          className="h-full  w-full aspect-square group-hover:scale-105  transition-all"
         />
         <div className=" h-full w-full flex justify-evenly flex-col text-start">
           <div className="h-16 w-full flex justify-start items-center py-1 px-3">

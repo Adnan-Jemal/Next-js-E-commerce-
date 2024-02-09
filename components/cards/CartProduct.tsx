@@ -23,6 +23,7 @@ const CartProduct = ({ id, name, img, price, RemoveCartItem }: propTypes) => {
           toast("Product Removed From Your Cart.", {
             description: "Click on add to cart to add it back to your cart.",
           });
+          
         }}
       >
         <XIcon className="h-[1.2rem] w-[1.2rem]" />
