@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const HomeHero = () => {
   return (
-    <div className="flex justify-center mt-16 max-w-6xl mx-auto h-screen">
-        <div className="bg-primary-foreground w-full h-[50%] mx-6  rounded-3xl relative overflow-hidden ">
+    <div className="flex justify-center mt-16 max-w-6xl mx-auto h-[20%]">
+        <div className="bg-primary-foreground w-full h-96 mx-6  rounded-3xl relative overflow-hidden ">
           <Image
             alt="home page hero img"
             src={linesHomeBg}
