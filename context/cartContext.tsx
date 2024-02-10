@@ -49,7 +49,7 @@ const CartWrapper = ({ children }: { children: React.ReactNode }) => {
   const ClearCartItems = () => {
     setCartItems([]);
     localStorage.removeItem(CART_STORAGE_KEY);
-    console.log('removed')
+    
     
   };
   const RemoveCartItem = (itmeId: string) => {

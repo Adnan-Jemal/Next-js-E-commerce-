@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "../ui/button";
 import {
@@ -13,10 +13,12 @@ import { SigninDialog } from "../buttons/SignInDialog";
 import CartBtn from "../buttons/CartBtn";
 import { auth } from "../../firebase";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
+import { CartContext } from "@/context/cartContext";
 
 const NavRightMenu = () => {
   const [user, loading] = useAuthState(auth);
   const [signOut, signOutloading, error] = useSignOut(auth);
+  const {ClearCartItems} = useContext(CartContext)
 
   const SignOut = async () => {
     try {
@@ -24,6 +26,8 @@ const NavRightMenu = () => {
     } catch (error) {
       console.error(error);
     }
+    ClearCartItems()
+
   };
 
   return (
