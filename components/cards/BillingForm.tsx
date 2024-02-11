@@ -102,9 +102,9 @@ const BillingForm = () => {
               render={({ field }) => {
                 return (
                   <FormItem>
-                    <FormLabel>Father&apos;s Name</FormLabel>
+                    <FormLabel>Last Name</FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="Father&apos;s Name" />
+                      <Input {...field} placeholder="Last Name" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
