@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import React, { useContext } from "react";
 
-const page = () => {
+const Page = () => {
   const {cartItems} = useContext(CartContext)
   
   const cartEmpty =cartItems.length === 0
@@ -28,4 +28,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -15,7 +15,7 @@ type productType = {
   img: string;
 };
 
-const page = ({ params }: { params: { orderId: string } }) => {
+const Page = ({ params }: { params: { orderId: string } }) => {
   const orderDoc = doc(db, "Orders", params.orderId);
   const [value, loading, error] = useDocument(orderDoc);
   const cartProducts: Array<productType> = value?.data()?.Products;
@@ -104,4 +104,4 @@ const page = ({ params }: { params: { orderId: string } }) => {
   );
 };
 
-export default page;
+export default Page;

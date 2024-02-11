@@ -8,7 +8,7 @@ import ProductList from "@/components/sections/ProductList";
 import Loading from "./loading";
 import SimilarProductsList from "@/components/sections/SimilarProductsList";
 
-const page = ({ params }: { params: { id: string } }) => {
+const Page = ({ params }: { params: { id: string } }) => {
   const productDoc = doc(db, "Products", params.id);
   const [value, loading, error] = useDocument(productDoc);
   error && console.error(error);
@@ -64,4 +64,4 @@ const page = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default page;
+export default Page;

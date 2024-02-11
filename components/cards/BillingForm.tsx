@@ -58,7 +58,7 @@ const BillingForm = () => {
 
   const handleSubmit = async (data: z.infer<typeof formSchema>) => {
     toast("Order Placed Successfully", {
-      description: "you've successfully placed an order!",
+      description: "you have successfully placed an order!",
     });
 
     const newOrder = await addDoc(collection(db, "Orders"), {
@@ -70,8 +70,6 @@ const BillingForm = () => {
     setTimeout(() => {
       ClearCartItems();
     }, 1000);
-
-    
   };
 
   return (
