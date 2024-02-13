@@ -3,12 +3,11 @@ import OrderCard from "@/components/cards/OrderCard";
 import { productType } from "@/components/cards/productCard";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { auth, db } from "@/firebase";
-import { collection, orderBy, query, where } from "firebase/firestore";
+import { db } from "@/firebase";
+import { collection, query, where } from "firebase/firestore";
 import Link from "next/link";
 
 import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
 
 const OrderPage = ({ params }: { params: { UID: string } }) => {
@@ -20,11 +19,22 @@ const OrderPage = ({ params }: { params: { UID: string } }) => {
   return (
     <div className="max-w-6xl   mx-auto ">
       <h1 className="py-16 text-4xl px-6 self-center ">Your Orders</h1>
-      <div className={` ${!noOrders&&'hidden'} flex flex-col items-center justify-center  h-full my-10 mx-6  text-center gap-8 bg-primary-foreground md:p-20 p-10 rounded-xl shadow-sm `}>
-        <h1 className="lg:text-3xl text-xl">You have not ordered any products yet. Please order some products, and your orders will be displayed here.</h1>
-        <Link href={'/shop'}><Button className="text-white lg:text-lg text-base" size={"lg"} >Continue Shopping</Button></Link>
+      <div
+        className={` ${
+          !noOrders && "hidden"
+        } flex flex-col items-center justify-center  h-full my-10 mx-6  text-center gap-8 bg-primary-foreground md:p-20 p-10 rounded-xl shadow-sm `}
+      >
+        <h1 className="lg:text-3xl text-xl">
+          You have not ordered any products yet. Please order some products, and
+          your orders will be displayed here.
+        </h1>
+        <Link href={"/shop"}>
+          <Button className="text-white lg:text-lg text-base" size={"lg"}>
+            Continue Shopping
+          </Button>
+        </Link>
       </div>
-      <div className={`${noOrders&&'hidden'}`}>
+      <div className={`${noOrders && "hidden"}`}>
         <div className="w-[85%] m-auto grid md:grid-cols-7 grid-cols-4 px-5 py-4 items-center justify-center text-center gap-4">
           <h2 className="col-span-1 font-semibold ">Date</h2>
           <h2 className="col-span-2 hidden md:block font-semibold">Orderer</h2>
@@ -46,7 +56,7 @@ const OrderPage = ({ params }: { params: { UID: string } }) => {
 
               return (
                 <OrderCard
-                key={order.id}
+                  key={order.id}
                   date={order.data().Date}
                   fatherName={order.data().fatherName}
                   firstName={order.data().firstName}
