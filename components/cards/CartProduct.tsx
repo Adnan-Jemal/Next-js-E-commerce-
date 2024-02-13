@@ -23,19 +23,15 @@ const CartProduct = ({ id, name, img, price, RemoveCartItem }: propTypes) => {
           toast("Product Removed From Your Cart.", {
             description: "Click on add to cart to add it back to your cart.",
           });
-          
         }}
       >
         <XIcon className="h-[1.2rem] w-[1.2rem]" />
       </Button>
-      <div className="grid grid-cols-2 w-full h-full">
-        <Image
-          width={100}
-          height={100}
-          alt="productImage"
-          src={img}
-          className="w-52 py-2 px-2 h-full rounded-3xl overflow-hidden"
-        />
+      <div className="grid grid-cols-2 w-full h-full ">
+        <div className="relative py-2 px-2 h-full rounded-2xl overflow-hidden">
+          <Image alt="productImage" src={img} fill  />
+        </div>
+
         <div className=" h-full w-full flex justify-evenly flex-col text-start">
           <div className="h-16 w-full flex justify-start items-center py-1 px-3">
             <h1 className="line-clamp-2">{name}</h1>
@@ -43,7 +39,7 @@ const CartProduct = ({ id, name, img, price, RemoveCartItem }: propTypes) => {
 
           <span className="h-[1px] w-full bg-primary"></span>
           <div className="flex px-3 items-center">
-            <Coins className="text-primary" />
+            <Coins className="text-primary hidden lg:block" />
             <h1 className="text-md pl-2  py-1 ">
               <span className="font-bold text-lg"> {price}ብር</span>
             </h1>

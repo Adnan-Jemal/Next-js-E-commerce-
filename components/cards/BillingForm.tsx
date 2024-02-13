@@ -64,9 +64,9 @@ const BillingForm = () => {
     const newOrder = await addDoc(collection(db, "Orders"), {
       ...form.getValues(),
       Date: serverTimestamp(),
-      Products: cartItems,
+      Products: cartItems,UID:user?.uid
     });
-    route.push(`/checkout/${newOrder.id}`);
+    route.push(`/orders/${newOrder.id}`);
     setTimeout(() => {
       ClearCartItems();
     }, 1000);

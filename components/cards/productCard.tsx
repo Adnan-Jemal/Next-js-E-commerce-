@@ -4,24 +4,26 @@ import computer from "@/public/computer.jpeg";
 import { Coins } from "lucide-react";
 import Link from "next/link";
 
-type propType = {
+export type productType = {
   id: string;
   name: string;
-  price: Number;
+  price: number;
   img: string;
 };
 
-const ProductCard = ({ id, name, price, img }: propType) => {
+const ProductCard = ({ id, name, price, img }: productType) => {
   return (
     <Link href={`/shop/${id}`}>
-      <div className="bg-secondary/10 dark:bg-secondary/50 h-72 w-64 rounded-lg grid items-center grid-rows-2 shadow-md hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors cursor-pointer overflow-hidden group">
-        <Image
-          alt="Product Image"
-          src={img}
-          width={500}
-          height={500}
-          className="h-full  w-full aspect-square group-hover:scale-105  transition-all"
-        />
+      <div className="bg-secondary/10 dark:bg-secondary/50 h-72 w-64 rounded-lg grid items-center grid-rows-2 shadow-lg hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors cursor-pointer overflow-hidden group ">
+        <div className="h-36  w-64 relative">
+          <Image
+            alt="Product Image"
+            src={img}
+            fill
+            className="  group-hover:scale-105 object-cover  transition-all"
+          />
+        </div>
+
         <div className=" h-full w-full flex justify-evenly flex-col text-start">
           <div className="h-16 w-full flex justify-start items-center py-1 px-3">
             <h1 className="text-lg line-clamp-2 ">{name}</h1>

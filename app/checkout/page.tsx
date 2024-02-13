@@ -15,7 +15,7 @@ const Page = () => {
     <div className="max-w-6xl   mx-auto">
       <h1 className="pt-16 text-4xl px-6 self-center">Checkout</h1>
       <div className={` ${!cartEmpty&&'hidden'} flex flex-col items-center justify-center  h-full my-36 mx-6  text-center gap-8 bg-primary-foreground md:p-20 p-10 rounded-xl shadow-sm `}>
-        <h1 className="lg:text-3xl text-xl">Your Cart is Empty, Please Add Some Products In Your Cart Before You Checkout.</h1>
+        <h1 className="lg:text-3xl text-xl">Your cart is empty. Please add some products to your cart before you checkout.</h1>
         <Link href={'/shop'}><Button className="text-white lg:text-lg text-base" size={"lg"} >Continue Shopping</Button></Link>
       </div>
 
