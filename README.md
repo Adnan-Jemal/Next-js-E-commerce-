@@ -23,7 +23,7 @@ This repository showcases a functional e-commerce application built using Next.j
 
 1. Clone this repository: `git clone https://github.com/Adnan-Jemal/Next-js-E-commerce.git`
 2. Install dependencies: `npm install` (or `yarn install`)
-3. Configure your Firebase project (environment variables or `.env` file)
+3. Configure your Firebase project (environment variables or `.env.local` file)
 4. Start the development server: `npm run dev` (or `yarn dev`)
 5. Access the app at http://localhost:3000
 
