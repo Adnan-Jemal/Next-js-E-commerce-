@@ -46,6 +46,7 @@ const OrderPage = ({ params }: { params: { UID: string } }) => {
 
               return (
                 <OrderCard
+                key={order.id}
                   date={order.data().Date}
                   fatherName={order.data().fatherName}
                   firstName={order.data().firstName}
